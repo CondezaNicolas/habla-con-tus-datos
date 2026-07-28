@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: ../apps/api
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      FRONTEND_ORIGIN: http://localhost:3000
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 100

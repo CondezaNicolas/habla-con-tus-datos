@@ -1,0 +1,24 @@
+# Entornos y secretos
+.env
+.env.*
+!.env.example
+
+# JavaScript / Next.js
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+*.log
+.vercel/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+
+# Sistema y herramientas
+.DS_Store
+.impeccable/

@@ -1,0 +1,31 @@
+[project]
+name = "habla-con-tus-datos-api"
+version = "0.1.0"
+description = "API segura de ingesta y consulta para Habla con tus datos"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "duckdb==1.5.5",
+  "fastapi==0.140.11",
+  "fastexcel==0.20.2",
+  "httpx==0.28.1",
+  "openai==2.49.0",
+  "polars==1.43.1",
+  "python-dotenv==1.2.2",
+  "python-multipart==0.0.32",
+  "sqlglot==30.14.0",
+  "uvicorn==0.51.0",
+]
+
+[dependency-groups]
+dev = [
+  "bandit>=1.9.0",
+  "pip-audit>=2.10.0",
+  "pytest>=8.3.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
