@@ -50,6 +50,11 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+@app.get("/")
+def root() -> dict[str, str]:
+    return {"status": "ok"}
+
+
 @app.post("/api/v1/datasets/upload", response_model=DatasetProfile)
 async def upload_dataset(request: Request, file: UploadFile = File(...)) -> DatasetProfile:
     rate_limiter.check(
